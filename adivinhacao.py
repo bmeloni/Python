@@ -20,7 +20,7 @@ def jogar_adivinhacao():
     else:
         total_de_tentativas = 5
 
-    for rodada in range(1, total_de_tentativas + 1): #A rodada está definida através do for
+    for rodada in range(1, total_de_tentativas + 1):
         print("\nTentativa {} de {}".format(rodada, total_de_tentativas))
         chute_str = input("Digite um número entre 0 e 100: ")
         print("\nVocê digitou ", chute_str)
