@@ -39,6 +39,7 @@ def jogar_adivinhacao():
             print("Parabéns, você acertou o número!")
             print("Total de {} pontos: ".format(pontos))
             break
+
         else:
             if (maior):
                 print("O seu chute foi maior que o número secreto")
@@ -47,8 +48,8 @@ def jogar_adivinhacao():
                 pontos_perdidos = abs(numero_secreto - chute)
                 pontos = pontos - pontos_perdidos
 
-    print("Jogo encerrado!")
-    print("---------------------------------")
+    print("O número secreto era: {}".format(numero_secreto))
+    print("-------------------------------------------")
 
 if (__name__ == "__main__"):
     jogar_adivinhacao()
