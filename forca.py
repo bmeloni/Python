@@ -3,22 +3,42 @@ def jogar_forca():
     print("   Bem vindo ao jogo de forca!")
     print("----------------------------------")
 
-    palavra_secreta = "banana"
+    palavra_secreta = "banana".upper()
+    letras_acertadas = ["_" for letra in palavra_secreta]
 
     acertou = False
     enforcou = False
+    erros = 0
+
+    print("Palavra:\n", letras_acertadas,"\n")
 
     while(not enforcou and not acertou):
         chute = input("Digite uma letra: ")
-        chute = chute.strip()
+        chute = chute.strip().upper()
 
-        index = 0 #Index = posição
-        for letra in palavra_secreta: #Para cada letra na palavra secreta
-            if(chute.upper() == letra.upper()):
-                print("Letra {} encontrada na posiçao {}".format(letra,index))
-            index = index + 1
+        if (chute in palavra_secreta):
+            index = 0
+            for letra in palavra_secreta: # Para cada letra na palavra secreta
+                if(chute == letra):
+                    letras_acertadas[index] = letra # Se acertar vou sobrescrever sobre a posição certa
+                index += 1
+        else:
+            erros += 1
+            print("Ops, não tem essa letra! Faltam {} tentativas.".format(6 - erros))
 
-    print("Jogo encerrado!")
+        enforcou = erros == 6
+        acertou = "_" not in letras_acertadas # Não acertou enquanto _ estiver nas letras acertadas
+        print(letras_acertadas)
+
+    if (acertou):
+        print("---------------------------------")
+        print("Parabens, você acertou!!","\nA palavra sercreta era:", palavra_secreta)
+    else:
+        print("---------------------------------")
+        print("Você perdeu!")
+        print("\nA palavra sercreta era:", palavra_secreta)
+
+    print("Jogo encerrado")
     print("---------------------------------")
 
 if (__name__ == "__main__"):
