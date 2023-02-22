@@ -1,2 +1,2 @@
 # Python
-Jogo de Adivinhação Numérica
+Jogo de Adivinhação Numérica e Jogo da Forca
